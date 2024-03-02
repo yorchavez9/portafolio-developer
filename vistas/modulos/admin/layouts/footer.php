@@ -81,6 +81,7 @@
 	<script src="vistas/js/usuarios.js"></script>
 	<script src="vistas/js/redes.sociales.js"></script>
 	<script src="vistas/js/redes.contacto.js"></script>
+	<script src="vistas/js/perfil.js"></script>
 
 </body>
 </html>
