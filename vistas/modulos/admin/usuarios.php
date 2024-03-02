@@ -15,7 +15,7 @@
                     <div class="card-header">
                         <h4 class="card-title">Administrar usuarios</h4>
                     </div>
-                    <div>
+                    <div class="mx-4">
                         <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalNuevoUsuario"><i class="fas fa-plus-circle"></i> Nuevo usuario</button>
                     </div>
                     <div class="card-body">

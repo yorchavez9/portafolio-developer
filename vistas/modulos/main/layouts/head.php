@@ -25,6 +25,10 @@
     <!-- Rtl css here -->
     <link rel="stylesheet" href="vistas/dist/main/assets/css/rtl.css">
 
+    <!-- FontAweson -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
