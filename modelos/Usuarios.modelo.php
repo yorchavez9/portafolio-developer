@@ -72,13 +72,14 @@ class ModeloUsuarios{
 
 	static public function mdlEditarUsuario($tabla, $datos){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, password = :password, perfil = :perfil, foto = :foto WHERE usuario = :usuario");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, apellidos = :apellidos, correo = :correo, contrasena = :contrasena WHERE id_usuario = :id_usuario");
 
 		$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		$stmt -> bindParam(":password", $datos["password"], PDO::PARAM_STR);
-		$stmt -> bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);
-		$stmt -> bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
-		$stmt -> bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
+		$stmt -> bindParam(":apellidos", $datos["apellidos"], PDO::PARAM_STR);
+		$stmt -> bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
+		$stmt -> bindParam(":contrasena", $datos["contrasena"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_STR);
+
 
 		if($stmt -> execute()){
 
@@ -96,32 +97,6 @@ class ModeloUsuarios{
 
 	}
 
-	/*=============================================
-	ACTUALIZAR USUARIO
-	=============================================*/
-
-	static public function mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2){
-
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item1 = :$item1 WHERE $item2 = :$item2");
-
-		$stmt -> bindParam(":".$item1, $valor1, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$item2, $valor2, PDO::PARAM_STR);
-
-		if($stmt -> execute()){
-
-			return "ok";
-		
-		}else{
-
-			return "error";	
-
-		}
-
-	
-
-		$stmt = null;
-
-	}
 
 	/*=============================================
 	BORRAR USUARIO
@@ -129,9 +104,9 @@ class ModeloUsuarios{
 
 	static public function mdlBorrarUsuario($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_usuario = :id_usuario");
 
-		$stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
+		$stmt -> bindParam(":id_usuario", $datos, PDO::PARAM_INT);
 
 		if($stmt -> execute()){
 

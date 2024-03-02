@@ -76,5 +76,9 @@
 		
 	</script>
 
+	<!-- SCRIPT DE MODULOS -->
+
+	<script src="vistas/js/usuarios.js"></script>
+
 </body>
 </html>

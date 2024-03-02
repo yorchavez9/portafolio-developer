@@ -20,7 +20,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="example" class="display" style="min-width: 845px">
+                            <table id="example" class="display tabla_usuario" style="min-width: 845px">
                                 <thead>
                                     <tr>
                                         <th>N°</th>
@@ -50,8 +50,8 @@
 
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-primary shadow btn-xs sharp me-1 btnEditarUsuario" idUsuario="<?php echo $value["id_usuario"] ?>" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp btnEliminarUsuario" idUsuario="<?php echo $value["id_usuario"] ?>" correo="<?php echo $value["correo"] ?>"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="btn btn-primary shadow btn-xs sharp me-1 btnEditarUsuario" idUsuario="<?php echo $value["id_usuario"] ?>" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"><i class="fas fa-pencil-alt"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp btnEliminarUsuario" idUsuario="<?php echo $value["id_usuario"] ?>"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -109,3 +109,54 @@
         </div>
     </div>
 </div>
+
+
+<!-- MODAL EDITAR USUARIO -->
+<div class="modal fade" id="modalEditarUsuario">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fw-bold">Editar usuario</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+                    <input type="text" name="id_usuario" id="id_usuario">
+                    <div class="form-group">
+                        <label for="nombre" class="form-label fw-bold">Nombre</label>
+                        <input type="text" name="editarNombre" id="editarNombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos" class="form-label fw-bold">Apellidos</label>
+                        <input type="text" name="editarApellidos" id="editarApellidos" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo" class="form-label fw-bold">Correo electrónico</label>
+                        <input type="email" name="editarCorreo" id="editarCorreo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena" class="form-label fw-bold">Ingrese la contraseña</label>
+                        <input type="password" class="form-control" name="editarContrasena" placeholder="Escriba la nueva contraseña">
+                        <input type="hidden" id="contrasenaActual" name="contrasenaActual">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sync"></i> Actualizar</button>
+                </div>
+                <?php
+                $editarUsuario = new ControladorUsuarios();
+                $editarUsuario->ctrEditarUsuario();
+                ?>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- BORRAR USUARIO -->
+
+<?php
+$borrarUsuario = new ControladorUsuarios();
+$borrarUsuario->ctrBorrarUsuario();
+?>
