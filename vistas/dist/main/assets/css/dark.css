@@ -1,0 +1,192 @@
+/* dark css hrre */
+.dark{
+    --primary-color: #fff;
+    --foreground-color: #fff;
+    --foreground-sub-color: #fff;
+    --body-background-color: rgba(33, 36, 40, 1);
+    --border-color: #000000;
+    
+}
+.dark .sidebar__header{
+    background: #000000;
+}
+.dark .bg-dark_primary_bg{
+    
+    background-color: rgba(33, 36, 40, 1);
+}
+
+.dark .primary__btn:hover{
+    color: var(--secondary-color);
+}
+.dark .hero__profile::before{
+    background: #fff;
+}
+.dark .hero__profile--title{
+    color: #333333;
+}
+.dark .hero__profile--subtitle{
+    color: #636363;
+}
+.dark .hero__profile--info__text{
+    color: #636363;
+}
+.dark .hero__profile--info__text:hover{
+    color: var(--secondary-color)
+}
+.dark .home__navigation--menu__icon{
+    background: #fff;
+}
+
+
+.dark .header__sticky.sticky{
+    background-color: rgba(24, 26, 29, 1);
+}
+
+.dark #scroll__top:hover{
+    color: var(--secondary-color);
+}
+
+/* dark hero section css */
+.dark .hero__section--bg{
+    background: url(../img/hero/hero-bg-img-dark.png);
+    border-bottom: 1px solid var(--bg-black-color);
+}
+
+.dark .hero__content--title{
+    color: var(--text-white-color);
+}
+.dark .hero__thumbnail--media.light_img{
+    display: none;
+}
+.dark .hero__thumbnail--media.dark_img{
+    display: block;
+}
+.dark .main__logo--img.logo_light{
+    display: none;
+}
+.dark .main__logo--img.logo_dark{
+    display: block;
+}
+.dark .projects__budget{
+    background: var(--bg-black-color);
+}
+.dark .home2__hero--bg{
+    background: url(../img/hero/home2-hero-bg-dark.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.dark .pricing__box{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 991px) {
+    .dark .home__navigation--menu{
+        box-shadow: -10px 0 20px 0 rgba(0, 0, 0, 0.1);
+        background-color: rgba(24, 26, 29, 1);
+    }
+    .dark .home__navigation--menu__icon{
+        background: var(--secondary-color);
+    }
+}
+
+.dark .toggle__navigation--bg{
+    background: #fff;
+}
+.dark .toggle__navigation.menu--visible .toggle__navigation--button{
+    background: #fff;
+}
+
+/* dark services section css */
+.dark .services__card{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+.dark .services__card:hover{
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* dark about section css */
+.dark .about__section--bg{
+    background-image: none;
+    border-bottom: 1px solid var(--bg-black-color);
+}
+.dark .about__btn:hover{
+    color: var(--secondary-color);
+}
+
+/* brand logo section */
+.dark .brand__logo--img.brand_logo_light{
+    display: none;
+}
+.dark .brand__logo--img.brand_logo_dark{
+    display: block;
+    filter: grayscale(1);
+    opacity: 1;
+}
+.dark .brand__logo--img.brand_logo_dark:hover{
+    filter: grayscale(0);
+}
+
+/* Resume dark css */
+.dark .border__round{
+    background: #fff;
+}
+
+
+/* skills dark css */
+.dark .skills__field::before{
+    background-color: rgba(55, 65, 81, 1);
+}
+
+/* portfolio dark css */
+.dark .portfolio__section--bg{
+    background: none;
+    border-bottom: 1px solid var(--bg-black-color);
+    border-top: 1px solid var(--bg-black-color);
+}
+.dark .modal-content{
+    background-color: rgba(55, 65, 81, 1);
+}
+.dark .portfolio__modal--colse:hover{
+    color: var(--secondary-color);
+}
+
+/* contact dark css */
+.dark .contact__section--bg{
+    background: url(../img/other/contact-bg-dark.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-top: 1px solid var(--bg-black-color);
+}
+.dark .contact__input--field{
+    border: 1px solid rgba(71, 85, 105, 1);
+    color: var(--text-white-color);
+}
+.dark .contact__input--field:focus{
+    border-color: #fff;
+}
+.dark .contact__textarea--field{
+    border: 1px solid rgba(71, 85, 105, 1);
+    color: var(--text-white-color);
+}
+.dark .contact__textarea--field:focus{
+    border-color: #fff;
+}
+
+/* blog dark css */
+.blog__card--tag{
+    background: var(--secondary-color);
+    color: var(--text-white-color);
+}
+
+/* footer dark css */
+.dark .footer__bg{
+    background: url(../img/other/footer-bg-dark.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-top: 1px solid var(--bg-black-color);
+}
+
+
+

@@ -1,0 +1,335 @@
+/*
+    Rtl version css
+*/
+
+/*
+    hero section css
+*/
+[dir="rtl"] .light__dark--btn.style__fixed{
+    left: 0;
+    right: auto;
+    border-radius: 0 1rem 1rem 0;
+}
+[dir="rtl"] #scroll__top{
+    left: 2rem;
+    right: auto;
+}
+[dir="rtl"] .hero__content{
+    padding-left: 0; 
+}
+@media only screen and (min-width: 768px) {
+    [dir="rtl"] .hero__content{
+        padding-right: 4rem;
+    } 
+}
+@media only screen and (min-width: 992px) {
+    [dir="rtl"] .hero__content{
+        padding-right: 5rem;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    [dir="rtl"] .hero__content{
+        padding-right: 8rem;
+    }
+}
+@media only screen and (min-width: 1366px) {
+    [dir="rtl"] .hero__content{
+        padding-right: 10rem;
+    }
+}
+
+[dir="rtl"] .projects__budget{
+    padding: 1rem 1.5rem 1rem 3rem;
+}
+@media only screen and (min-width: 992px) {
+    [dir="rtl"] .projects__budget{
+        padding: 1.4rem 1.5rem 1.2rem 3rem;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    [dir="rtl"] .hero__profile--content{
+        padding-left: 0;
+        padding-right: 5rem;
+    }
+    
+}
+@media only screen and (min-width: 1200px) {
+    [dir="rtl"] .hero__profile--content{
+        padding-left: 0;
+        padding-right: 6rem;
+    }
+}
+[dir="rtl"] .hero__profile--info__text{
+    margin-right: 1.2rem;
+    margin-left: 0;
+}
+[dir="rtl"] .home__navigation--menu{
+    padding-right: 16rem;
+    padding-left: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+    [dir="rtl"] .home__navigation--menu{
+        padding-right: 20rem;
+        padding-left: 0;
+    }
+}
+@media only screen and (max-width: 991px) {
+    [dir="rtl"] .home__navigation--menu{
+        padding-right: 0;
+    }
+}
+
+[dir="rtl"] .home__navigation--menu__text{
+    left: 0;
+    right: auto;
+}
+[dir="rtl"] .home__navigation--menu__link:hover .home__navigation--menu__text{
+    left: 1rem;
+    right: auto;
+    padding: 0 2.5rem 0 5rem;
+}
+
+/*
+    about section css
+*/
+[dir="rtl"] .about__info--items{
+    padding: 0.8rem 2.5rem 0.8rem 0;
+}
+[dir="rtl"] .about__info--items::before{
+    right: 0;
+    left: auto;
+}
+[dir="rtl"] .about__info--items::after{
+    right: 5px;
+    left: auto;
+}
+@media only screen and (min-width: 992px) {
+    [dir="rtl"] .about__info--items{
+        padding: 1rem 2.5rem 1rem 0;
+    } 
+}
+[dir="rtl"] .about__thumbnail--media::before{
+    left: auto;
+    right: -9px;
+}
+@media only screen and (min-width: 768px) {
+    [dir="rtl"] .about__thumbnail--media::before{
+        right: -35px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    [dir="rtl"] .about__thumbnail--media::before{
+        right: -83px;
+    }
+}
+
+/*
+    Brand section css
+*/
+[dir="rtl"] .brand__logo--child{
+    border-right: 0;
+    border-left: 1px solid #DDDDDD;
+}
+[dir="rtl"] .brand__logo--child:last-child{
+    border-left: 0;
+}
+
+
+/*
+    resume css here
+*/
+[dir="rtl"] .resume__items{
+    padding-right: 3rem;
+    padding-left: 0;
+}
+[dir="rtl"] .border__position--style{
+    right: 0;
+    left: auto;
+}
+[dir="rtl"] .border__round{
+    right: -9px;
+    left: auto;
+}
+[dir="rtl"] .portfolio__modal--info__icon{
+    margin-right: auto;
+    margin-left: 1rem;
+}
+
+
+/*
+    skills section css
+*/
+[dir="rtl"] .skills__field::after{
+    right: 0;
+    left: auto;
+}
+[dir="rtl"] .skills__count.width_100{
+    right: 90%;
+    left: auto;
+}
+[dir="rtl"] .skills__count.width_90{
+    right: 85%;
+    left: auto;
+}
+[dir="rtl"] .skills__count.width_70{
+    right: 67%;
+    left: auto;
+}
+[dir="rtl"] .skills__count.width_60{
+    right: 58%;
+    left: auto;
+}
+[dir="rtl"] .skills__count.width_75{
+    right: 72%;
+    left: auto;
+}
+
+
+/*
+    contact css
+*/
+[dir="rtl"] .contact__info{
+    padding-left: 0;
+}
+@media only screen and (min-width: 992px) {
+    [dir="rtl"] .contact__info{
+        padding-right: 3rem;
+    }
+ }
+ @media only screen and (min-width: 1366px) {
+    [dir="rtl"] .contact__info{
+        padding-right: 5rem;
+    }
+ }
+
+
+
+ /*
+    Other page css
+*/
+[dir="rtl"] .toggle__navigation{
+    right: 3rem;
+    left: auto;
+}
+[dir="rtl"] .light__dark--btn.style__other{
+    left: 2rem;
+    right: auto;
+}
+@media only screen and (min-width: 992px) {
+    [dir="rtl"] .light__dark--btn.style__other{
+        left: 3rem;
+    }
+ }
+[dir="rtl"] .toggle__navigation--bg{
+    right: 0;
+    left: auto;
+}
+[dir="rtl"] .toggle__nav--menu{
+    padding-left: auto;
+    padding-right: 2rem;
+}
+[dir="rtl"] .toggle__nav--menu__text{
+    padding-left: auto;
+    padding-right: 2.5rem;
+}
+[dir="rtl"] .toggle__navigation.menu--visible .toggle__nav--menu__text{
+    padding-left: auto;
+    padding-right: 3.8rem;
+}
+[dir="rtl"] .toggle__nav--menu__text::before{
+    left: auto;
+    right: 17px;
+}
+
+
+/*
+    home three rtl css
+*/
+
+[dir="rtl"] .sidebar__header{
+    right: 0;
+    left: auto;
+}
+
+@media only screen and (min-width: 1200px) {
+    [dir="rtl"] .hero__section--style3 {
+      padding-left: 0;
+      padding-right: 30rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    [dir="rtl"] .hero__section--style3 {
+      padding-left: 0;
+      padding-right: 42rem;
+    }
+  }
+
+  [dir="rtl"] .sidebar__header--inner {
+    padding: 5rem 3rem 5rem 0;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    [dir="rtl"] .sidebar__header--inner {
+      padding: 5rem 10rem 5rem 0;
+    }
+  }
+
+  [dir="rtl"] .sidebar__header--menu__icon {
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+
+  [dir="rtl"] .light__dark--btn.position-fixed {
+    right: auto;
+    left: 0;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    [dir="rtl"] .light__dark--btn.position-fixed {
+      right: auto;
+      left: 3rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    [dir="rtl"] .light__dark--btn.position-fixed {
+      right: auto;
+      left: 10rem;
+    }
+  }
+
+  @media only screen and (max-width: 1199px){
+    [dir="rtl"]  .light__dark--btn.style3 {
+        border-radius: 0 1rem 1rem 0;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    [dir="rtl"] .inner__page--content__style3 {
+      padding-left: 0;
+      padding-right: 30rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    [dir="rtl"] .inner__page--content__style3 {
+      padding-left: 0;
+      padding-right: 42rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    [dir="rtl"] .page__content--style3__padding {
+      padding: 0 5rem 0 3rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    [dir="rtl"] .page__content--style3__padding {
+      padding: 0 14rem 0 10rem;
+    }
+  }
