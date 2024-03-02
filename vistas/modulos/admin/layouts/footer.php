@@ -79,6 +79,7 @@
 	<!-- SCRIPT DE MODULOS -->
 
 	<script src="vistas/js/usuarios.js"></script>
+	<script src="vistas/js/redes.sociales.js"></script>
 
 </body>
 </html>

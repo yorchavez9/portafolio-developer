@@ -13,6 +13,12 @@
                     <span class="nav-text">Usuarios</span>
                 </a>
             </li>
+            <li>
+                <a href="redesSociales" aria-expanded="false">
+                    <i class="fas fa-globe"></i>
+                    <span class="nav-text">Redes sociales</span>
+                </a>
+            </li>
          
         </ul>
         <div class="side-bar-profile">
