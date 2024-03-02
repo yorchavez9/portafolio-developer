@@ -30,6 +30,13 @@
                         <button type="submit" class="contact__button primary__btn">Ingresar</button>
                     </div>
 
+                    <?php
+                    
+                    $IngresoUsuario = new ControladorUsuarios();
+                    $IngresoUsuario->ctrIngresoUsuario();
+
+                    ?>
+
                 </form>
 
             </div>

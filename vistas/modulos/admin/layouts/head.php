@@ -21,6 +21,10 @@
 	<link href="vistas/dist/admin/vendor/jquery-nice-select/vistas/dist/admin/css/nice-select.css" rel="stylesheet">
 	<link href="vistas/dist/admin/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link rel="stylesheet" href="vistas/dist/admin/vendor/nouislider/nouislider.min.css">
+
+	<!-- sweetalert2 -->
+	<link rel="stylesheet" href="vistas/dist/sweetalert2/sweetalert2.min.css">
+	<link rel="stylesheet" href="vistas/dist/sweetalert2/sweetalert2.min.js">
 	
 	<!-- Style css -->
     <link href="vistas/dist/admin/css/style.css" rel="stylesheet">
