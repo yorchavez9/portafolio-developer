@@ -14,6 +14,11 @@
 	
 	<!-- Chart piety plugin files -->
     <script src="vistas/dist/admin/vendor/peity/jquery.peity.min.js"></script>
+
+	<!-- Datatable -->
+    <script src="vistas/dist/admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vistas/dist/admin/js/plugins-init/datatables.init.js"></script>
+
 	<!-- Dashboard 1 -->
 	<script src="vistas/dist/admin/js/dashboard/dashboard-1.js"></script>
 	

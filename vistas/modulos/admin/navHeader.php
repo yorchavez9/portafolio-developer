@@ -6,8 +6,8 @@
             </defs>
         </svg>
         <div class="brand-title">
-            <h2 class="">Fillow.</h2>
-            <span class="brand-sub-title">@soengsouy</span>
+            <h2 class="">Apuuray.</h2>
+            <span class="brand-sub-title">@apuuray.</span>
         </div>
     </a>
     <div class="nav-control">

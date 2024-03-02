@@ -28,13 +28,13 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
       
             }else{
       
-              include "modulos/404.php";
+              include "modulos/admin/404.php";
       
             }
       
           }else{
       
-            include "modulos/inicio.php";
+            include "modulos/admin/inicio.php";
       
           }
 

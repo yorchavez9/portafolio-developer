@@ -22,12 +22,18 @@
 	<link href="vistas/dist/admin/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link rel="stylesheet" href="vistas/dist/admin/vendor/nouislider/nouislider.min.css">
 
-	<!-- sweetalert2 -->
-	<link rel="stylesheet" href="vistas/dist/sweetalert2/sweetalert2.min.css">
-	<link rel="stylesheet" href="vistas/dist/sweetalert2/sweetalert2.min.js">
+	
+
+	<!-- Datatable -->
+    <link href="vistas/dist/admin/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 	
 	<!-- Style css -->
     <link href="vistas/dist/admin/css/style.css" rel="stylesheet">
+
+	<!-- sweetalert2 -->
+	<link rel="stylesheet" href="vistas/dist/sweetalert2/sweetalert2.min.css">
+	<script src="vistas/dist/sweetalert2/sweetalert2.min.js"></script>
+	<script src="vistas/dist/jquery/jquery-3.7.1.min.js"></script>
 	
 </head>
 <body>
