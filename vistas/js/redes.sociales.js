@@ -1,18 +1,19 @@
 
 
 /*=============================================
-EDITAR USUARIO
+EDITAR REDES SOCIALES
 =============================================*/
-$(".tabla_usuario").on("click", ".btnEditarUsuario", function(){
+$(".tabla_redes").on("click", ".btnEditarRedes", function(){
 
-	var idUsuario = $(this).attr("idUsuario");
+	var idRedes = $(this).attr("idRedes");
+
 	
 	var datos = new FormData();
-	datos.append("idUsuario", idUsuario);
+	datos.append("idRedes", idRedes);
 
 	$.ajax({
 
-		url:"ajax/usuarios.ajax.php",
+		url:"ajax/redes.sociales.ajax.php",
 		method: "POST",
 		data: datos,
 		cache: false,
@@ -21,12 +22,14 @@ $(".tabla_usuario").on("click", ".btnEditarUsuario", function(){
 		dataType: "json",
 		success: function(respuesta){
 			
-			$("#id_usuario").val(respuesta["id_usuario"]);
-			$("#editarNombre").val(respuesta["nombre"]);
-			$("#editarApellidos").val(respuesta["apellidos"]);
-			$("#editarCorreo").val(respuesta["correo"]);
+			$("#id_redes_social").val(respuesta["id_redes_social"]);
+			$("#editfacebook").val(respuesta["facebook"]);
+			$("#edittwitter").val(respuesta["twitter"]);
+			$("#editpinterest").val(respuesta["pinterest"]);
+			$("#edityoutube").val(respuesta["youtube"]);
+			$("#edittiktok").val(respuesta["tiktok"]);
+			$("#editlinkedin").val(respuesta["linkedin"]);
 	
-			$("#contrasenaActual").val(respuesta["contrasena"]);
 
 		}
 
@@ -36,26 +39,26 @@ $(".tabla_usuario").on("click", ".btnEditarUsuario", function(){
 
 
 /*=============================================
-ELIMINAR USUARIO
+ELIMINAR REDES SOCIALES
 =============================================*/
-$(".tabla_usuario").on("click", ".btnEliminarUsuario", function(){
+$(".tabla_redes").on("click", ".btnEliminarRedes", function(){
 
-  var idUsuario = $(this).attr("idUsuario");
+  var idRedes = $(this).attr("idRedes");
 
   Swal.fire({
-    title: '¿Está seguro de borrar el usuario?',
+    title: '¿Está seguro de borrar los datos?',
     text: "¡Si no lo está puede cancelar la accíón!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
-      confirmButtonText: 'Si, borrar usuario!'
+      confirmButtonText: 'Si, borrar los datos!'
   }).then(function(result){
 
     if(result.value){
 
-      window.location = "index.php?ruta=usuarios&idUsuario="+idUsuario;
+      window.location = "index.php?ruta=redesSociales&idRedes="+idRedes;
 
     }
 
