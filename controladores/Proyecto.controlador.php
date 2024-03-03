@@ -1,43 +1,43 @@
 <?php
-class ControladorPerfil
+class ControladorProyecto
 {
 
 
     /* =============================
-    MOSTRAR PERFIL
+    MOSTRAR PROYECTO
     ============================= */
 
-    static public function ctrMostrarPerfil($item, $valor)
+    static public function ctrMostrarProyecto($item, $valor)
     {
 
-        $tabla = "perfil";
+        $tabla = "proyectos";
 
-        $respuesta = ModeloPerfil::mdlMostrarPerfil($tabla, $item, $valor);
+        $respuesta = ModeloProyecto::mdlMostrarProyectos($tabla, $item, $valor);
 
         return $respuesta;
     }
 
     /* =============================
-    REGISTRO DE PERFIL
+    REGISTRO DE PROYECTO
     ============================= */
 
-    static public function ctrCrearPerfil()
+    static public function ctrCrearProyecto()
     {
 
-        if (isset($_POST["nombre"])) {
+        if (isset($_POST["titulo"])) {
 
-            if (!empty($_POST["nombre"])) {
+            if (!empty($_POST["titulo"])) {
 
 
                 /* ============================
                         VALIDANDO IMAGEN
                     ============================ */
 
-                $ruta = "vistas/img/foto/";
+                $ruta = "vistas/img/imagen/";
 
-                if (isset($_FILES["foto"]["tmp_name"])) {
+                if (isset($_FILES["imagen"]["tmp_name"])) {
 
-                    $extension = pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
+                    $extension = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
 
                     $tipos_permitidos = array("jpg", "jpeg", "png");
 
@@ -47,7 +47,7 @@ class ControladorPerfil
 
                         $ruta_imagen = $ruta . $nombre_imagen . "." . $extension;
 
-                        if (move_uploaded_file($_FILES["foto"]["tmp_name"], $ruta_imagen)) {
+                        if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta_imagen)) {
 
                             echo "path_imagen subida correctamente.";
                         } else {
@@ -61,76 +61,19 @@ class ControladorPerfil
                 }
 
 
-
-                /* ================================
-                VALIDANDO ARCHIVO
-                ================================ */
-
-                if (isset($_FILES["cv"]["tmp_name"]) && !empty($_FILES["cv"]["tmp_name"])) {
-                    $tamaño_maximo = 20 * 1024 * 1024; // 20 MB en bytes
-                
-                    if ($_FILES["cv"]["size"] > $tamaño_maximo) {
-                        echo
-                        '<script>
-                
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "¡El tamño del archivos es muy grande!",
-                                    text: "El tamaño del archivo excede los 20 MB permitidos.",
-                                    showConfirmButton: true,
-                                    confirmButtonText: "Cerrar"
-                                }).then(function(result) {
-                                    if (result.value) {
-                
-                                        window.location = "perfil";
-                
-                                    }
-                                })
-                
-                        </script>';
-                        
-                    } else {
-                        // El tamaño del archivo es aceptable
-                        // Procede con el procesamiento del archivo
-                    }
-                }
-
-                $ruta = "vistas/archivo/";
-
-                if (isset($_FILES["cv"]["tmp_name"])) {
-                    $extension = pathinfo($_FILES["cv"]["name"], PATHINFO_EXTENSION);
-
-                    $tipos_permitidos = array("pdf", "doc", "docx");
-
-                    if (in_array(strtolower($extension), $tipos_permitidos)) {
-                        $nombre_archivo = date("YmdHis") . rand(1000, 9999);
-
-                        $ruta_archivo = $ruta . $nombre_archivo . "." . $extension;
-
-                        if (move_uploaded_file($_FILES["cv"]["tmp_name"], $ruta_archivo)) {
-                            echo "Archivo subido correctamente.";
-                        } else {
-                            echo "Error al subir el archivo.";
-                        }
-                    } else {
-                        echo "Solo se permiten archivos PDF, DOC, DOCX.";
-                    }
-                }
-
-
-
-                $tabla = "perfil";
+                $tabla = "proyectos";
 
 
                 $datos = array(
-                    "cv" => $ruta_archivo,
-                    "foto" => $ruta_imagen,
-                    "nombre" => $_POST["nombre"],
-                    "especializacion" => $_POST["especializacion"],
-                    "descripcion" => $_POST["descripcion"]
+                    "titulo" => $_POST["titulo"],
+                    "cliente" => $_POST["cliente"],
+                    "lenguajes" => $_POST["lenguajes"],
+                    "preview" => $_POST["preview"],
+                    "descripcion" => $_POST["descripcion"],
+                    "imagen" => $ruta_imagen
                 );
 
-                $respuesta = ModeloPerfil::mdlIngresarPerfil($tabla, $datos);
+                $respuesta = ModeloProyecto::mdlIngresarProyecto($tabla, $datos);
 
                 if($respuesta == "ok"){
                     echo
@@ -144,7 +87,7 @@ class ControladorPerfil
                             }).then(function(result) {
                                 if (result.value) {
             
-                                    window.location = "perfil";
+                                    window.location = "proyectos";
             
                                 }
                             })
@@ -177,10 +120,10 @@ class ControladorPerfil
     }
 
     /* =============================
-    EDITAR Perfil
+    EDITAR PROYECTO
     ============================= */
 
-    static public function ctrEditarPerfil()
+    static public function ctrEditarProyecto()
     {
 
         if (isset($_POST["editNombre"])) {
@@ -194,7 +137,7 @@ class ControladorPerfil
 
                 $ruta = "vistas/img/foto/";
 
-                $ruta_img = $_POST["fotoActual"];
+                $ruta_img = $_POST["imagenActual"];
 
                 if (isset($_FILES["editFoto"]["tmp_name"]) && !empty($_FILES["editFoto"]["tmp_name"])) {
 
@@ -270,14 +213,14 @@ class ControladorPerfil
 
                 $datos = array(
                     "id_perfil" => $_POST["id_perfil"],
-                    "foto" => $ruta_img,
+                    "imagen" => $ruta_img,
                     "cv" => $ruta_archivo,
                     "nombre" => $_POST["editNombre"],
                     "especializacion" => $_POST["editEspecializacion"],
                     "descripcion" => $_POST["editDescripcion"]
                 );
 
-                $respuesta = ModeloPerfil::mdlEditarPerfil($tabla, $datos);
+                $respuesta = ModeloProyecto::mdlEditarProyecto($tabla, $datos);
 
                 if ($respuesta == "ok") {
 
@@ -304,9 +247,9 @@ class ControladorPerfil
 
 
     /*  =========================
-    BORRAR PERFIL
+    BORRAR PROYECTO
     ========================= */
-    static public function ctrBorrarPerfil()
+    static public function ctrBorrarProyecto()
     {
 
         if (isset($_GET["idPerfil"])) {
@@ -315,10 +258,10 @@ class ControladorPerfil
 
             $datos = $_GET["idPerfil"];
 
-            if ($_GET["foto"] != "") {
+            if ($_GET["imagen"] != "") {
 
-                unlink($_GET["foto"]);
-                rmdir($_GET["foto"]);
+                unlink($_GET["imagen"]);
+                rmdir($_GET["imagen"]);
             }
             if ($_GET["cv"] != "") {
 
@@ -326,7 +269,7 @@ class ControladorPerfil
                 rmdir($_GET["cv"]);
             }
 
-            $respuesta = ModeloPerfil::mdlBorrarPerfil($tabla, $datos);
+            $respuesta = ModeloProyecto::mdlBorrarProyecto($tabla, $datos);
 
             if ($respuesta == "ok") {
 

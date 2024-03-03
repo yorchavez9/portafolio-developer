@@ -1,8 +1,7 @@
 
 
 /*=============================================
-EDITAR PERFIL
-
+EDITAR PROYECTO
 =============================================*/
 $(".content_perfil").on("click", ".btnEditarPerfil", function(){
 
@@ -38,7 +37,7 @@ $(".content_perfil").on("click", ".btnEditarPerfil", function(){
 
 
 /*=============================================
-ELIMINAR FILES
+ELIMINAR PROYECTO
 =============================================*/
 $(".content_perfil").on("click", ".btnEliminarPerfil", function () {
 

@@ -32,6 +32,12 @@
                     <span class="nav-text">Redes contacto</span>
                 </a>
             </li>
+            <li>
+                <a href="proyectos" aria-expanded="false">
+                    <i class="fas fa-project-diagram"></i>
+                    <span class="nav-text">Proyectos</span>
+                </a>
+            </li>
          
         </ul>
  

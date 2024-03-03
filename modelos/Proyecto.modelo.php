@@ -2,13 +2,13 @@
 
 require_once "conexion.php";
 
-class ModeloPerfil{
+class ModeloProyecto{
 
 	/*=============================================
-	MOSTRAR PERFIL
+	MOSTRAR PROYECTO
 	=============================================*/
 
-	static public function mdlMostrarPerfil($tabla, $item, $valor){
+	static public function mdlMostrarProyectos($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -38,18 +38,19 @@ class ModeloPerfil{
 	}
 
 	/*=============================================
-	REGISTRO PERFIL
+	REGISTRO PROYECTO
 	=============================================*/
 
-	static public function mdlIngresarPerfil($tabla, $datos){
+	static public function mdlIngresarProyecto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(cv, foto, nombre, especializacion, descripcion) VALUES (:cv, :foto, :nombre, :especializacion, :descripcion)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(titulo, cliente, lenguajes, preview, descripcion, imagen) VALUES (:titulo, :cliente, :lenguajes, :preview, :descripcion, :imagen)");
 
-		$stmt->bindParam(":cv", $datos["cv"], PDO::PARAM_STR);
-		$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
-		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		$stmt->bindParam(":especializacion", $datos["especializacion"], PDO::PARAM_STR);
+		$stmt->bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
+		$stmt->bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
+		$stmt->bindParam(":lenguajes", $datos["lenguajes"], PDO::PARAM_STR);
+		$stmt->bindParam(":preview", $datos["preview"], PDO::PARAM_STR);
 		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+		$stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
@@ -61,25 +62,24 @@ class ModeloPerfil{
 		
 		}
 
-		
-		
+
 		$stmt = null;
 
 	}
 
 	/*=============================================
-	EDITAR PEFIL
+	EDITAR PROYECTO
 	=============================================*/
 
-	static public function mdlEditarPerfil($tabla, $datos){
+	static public function mdlEditarProyecto($tabla, $datos){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET cv = :cv, foto = :foto, nombre = :nombre, especializacion = :especializacion, descripcion = :descripcion WHERE id_perfil = :id_perfil");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET titulo = :titulo, cliente = :cliente, lenguajes = :lenguajes, preview = :preview, descripcion,imagen = :descripcion,imagen WHERE id_perfil = :id_perfil");
 
-		$stmt -> bindParam(":cv", $datos["cv"], PDO::PARAM_STR);
-		$stmt -> bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
-		$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		$stmt -> bindParam(":especializacion", $datos["especializacion"], PDO::PARAM_STR);
-		$stmt -> bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+		$stmt -> bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
+		$stmt -> bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
+		$stmt -> bindParam(":lenguajes", $datos["lenguajes"], PDO::PARAM_STR);
+		$stmt -> bindParam(":preview", $datos["preview"], PDO::PARAM_STR);
+		$stmt -> bindParam(":descripcion,imagen", $datos["descripcion,imagen"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id_perfil", $datos["id_perfil"], PDO::PARAM_INT);
 
 
@@ -101,10 +101,10 @@ class ModeloPerfil{
 
 
 	/*=============================================
-	BORRAR PEFIL
+	BORRAR PROYECTO
 	=============================================*/
 
-	static public function mdlBorrarPerfil($tabla, $datos){
+	static public function mdlBorrarProyecto($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_perfil = :id_perfil");
 

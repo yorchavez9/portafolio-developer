@@ -4,7 +4,7 @@
         <div class="row page-titles">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="inicio" class="form-label fw-bold">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="#">Usuarios</a></li>
+                <li class="breadcrumb-item"><a href="#">Proyectos</a></li>
             </ol>
         </div>
         <!-- row -->
@@ -13,21 +13,23 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Administrar usuarios</h4>
+                        <h4 class="card-title">Administrar proyectos</h4>
                     </div>
                     <div class="mx-4">
-                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalNuevoUsuario"><i class="fas fa-plus-circle"></i> Nuevo usuario</button>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalNuevoProyecto"><i class="fas fa-plus-circle"></i> Nuevo proyecto</button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="example" class="display tabla_usuario" style="min-width: 845px">
+                            <table id="example" class="display tabla_proyecto" style="min-width: 845px">
                                 <thead>
                                     <tr>
                                         <th>N°</th>
-                                        <th>Nombre</th>
-                                        <th>Apellidos</th>
-                                        <th>Correo</th>
-                                        <th>Fecha</th>
+                                        <th>Título</th>
+                                        <th>Cliente</th>
+                                        <th>Lenguajes</th>
+                                        <th>preview</th>
+                                        <th>descripcion</th>
+                                        <th>imagen</th>
                                         <th>Acción</th>
                                     </tr>
                                 </thead>
@@ -36,22 +38,31 @@
                                     $item = null;
                                     $valor = null;
 
-                                    $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+                                    $proyectos = ControladorProyecto::ctrMostrarProyecto($item, $valor);
 
-                                    foreach ($usuarios as $key => $value) {
+                                    foreach ($proyectos as $key => $value) {
                                     ?>
                                         <tr>
                                             <td><?php echo $key + 1 ?></td>
-                                            <td><?php echo $value["nombre"] ?></td>
-                                            <td><?php echo $value["apellidos"] ?></td>
-                                            <td><?php echo $value["correo"] ?></td>
-
-                                            <td><?php echo $value["fecha"] ?></td>
+                                            <td><?php echo $value["titulo"] ?></td>
+                                            <td><?php echo $value["cliente"] ?></td>
+                                            <td><?php echo $value["lenguajes"] ?></td>
+                                            <td><?php echo $value["preview"] ?></td>
+                                            <td><?php echo $value["descripcion"] ?></td>
+                                            <td>
+                                                <?php
+                                                if ($value["imagen"] != null) {
+                                                ?>
+                                                    <img src="<?php echo $value["imagen"]?>" class=" img-fluid" width="100px" height="40px" alt="">
+                                                <?php
+                                                }
+                                                ?>
+                                            </td>
 
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-primary shadow btn-xs sharp me-1 btnEditarUsuario" idUsuario="<?php echo $value["id_usuario"] ?>" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp btnEliminarUsuario" idUsuario="<?php echo $value["id_usuario"] ?>"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="btn btn-primary shadow btn-xs sharp me-1 btnEditarProyecto" idProyecto="<?php echo $value["id_proyecto"] ?>" data-bs-toggle="modal" data-bs-target="#modalEditarProyecto"><i class="fas fa-pencil-alt"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp btnEliminarProyecto" idProyecto="<?php echo $value["id_proyecto"] ?>" imagen="<?php echo $value["imagen"] ?>"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -69,32 +80,40 @@
 </div>
 
 
-<!-- MODAL NUEVO USUARIO -->
-<div class="modal fade" id="modalNuevoUsuario">
+<!-- MODAL NUEVO PROYECTO -->
+<div class="modal fade" id="modalNuevoProyecto">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title fw-bold">Nuevo usuario</h3>
+                <h3 class="modal-title fw-bold">Nuevo proyecto</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal">
                 </button>
             </div>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="nombre" class="form-label fw-bold">Ingrese nombre</label>
-                        <input type="text" name="nombre" class="form-control" placeholder="Ingrese nombre">
+                        <label for="titulo" class="form-label fw-bold">Ingrese el título</label>
+                        <input type="text" name="titulo" class="form-control" placeholder="Ingrese nombre">
                     </div>
                     <div class="form-group">
-                        <label for="apellidos" class="form-label fw-bold">Ingrese apellidos</label>
-                        <input type="text" name="apellidos" class="form-control" placeholder="Ingrese apellidos">
+                        <label for="cliente" class="form-label fw-bold">Ingrese el cliente</label>
+                        <input type="text" name="cliente" class="form-control" placeholder="Ingrese apellidos">
                     </div>
                     <div class="form-group">
-                        <label for="correo" class="form-label fw-bold">Ingrese correo electrónico</label>
-                        <input type="email" name="correo" class="form-control" placeholder="Ingrese corro electrónico">
+                        <label for="lenguajes" class="form-label fw-bold">Ingrese los lenguajes de programación</label>
+                        <input type="text" name="lenguajes" class="form-control" placeholder="Ingrese corro electrónico">
                     </div>
                     <div class="form-group">
-                        <label for="contrasena" class="form-label fw-bold">Ingrese la contraseña</label>
-                        <input type="password" name="contrasena" class="form-control" placeholder="Ingrese la contraseña">
+                        <label for="preview" class="form-label fw-bold">Ingrese el link del demo</label>
+                        <input type="text" name="preview" class="form-control" placeholder="Ingrese la contraseña">
+                    </div>
+                    <div class="form-group">
+                        <label for="preview" class="form-label fw-bold">Ingrese la descripción</label>
+                        <textarea name="descripcion" id="descripcion" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen" class="form-label fw-bold">Ingrese la imagen</label>
+                        <input type="file" name="imagen" id="imagen" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -102,8 +121,8 @@
                     <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
                 </div>
                 <?php
-                $crearUsuario = new ControladorUsuarios();
-                $crearUsuario->ctrCrearUsuario();
+                $crearProyecto = new ControladorProyecto();
+                $crearProyecto->ctrCrearProyecto();
                 ?>
             </form>
         </div>
@@ -111,8 +130,8 @@
 </div>
 
 
-<!-- MODAL EDITAR USUARIO -->
-<div class="modal fade" id="modalEditarUsuario">
+<!-- MODAL EDITAR PROYECTO -->
+<div class="modal fade" id="modalEditarProyecto">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -146,8 +165,8 @@
                     <button type="submit" class="btn btn-primary"><i class="fas fa-sync"></i> Actualizar</button>
                 </div>
                 <?php
-                $editarUsuario = new ControladorUsuarios();
-                $editarUsuario->ctrEditarUsuario();
+                $editarUsuario = new ControladorProyecto();
+                $editarUsuario->ctrEditarProyecto();
                 ?>
             </form>
         </div>
@@ -157,6 +176,6 @@
 <!-- BORRAR USUARIO -->
 
 <?php
-$borrarUsuario = new ControladorUsuarios();
-$borrarUsuario->ctrBorrarUsuario();
+$borrarProyecto = new ControladorProyecto();
+$borrarProyecto->ctrBorrarProyecto();
 ?>

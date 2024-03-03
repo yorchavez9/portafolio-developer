@@ -1,22 +1,22 @@
 <?php
 
-require_once "../controladores/Perfil.controlador.php";
-require_once "../modelos/Perfil.modelo.php";
+require_once "../controladores/Proyecto.controlador.php";
+require_once "../modelos/Proyecto.modelo.php";
 
-class AjaxPerfil{
+class AjaxProyecto{
 
 	/*=============================================
-	EDITAR PERFIL
+	EDITAR PROYECTO
 	=============================================*/	
 
-	public $idPerfil;
+	public $idProyecto;
 
-	public function ajaxPerfil(){
+	public function ajaxProyecto(){
 
-		$item = "id_perfil";
-		$valor = $this->idPerfil;
+		$item = "id_proyecto";
+		$valor = $this->idProyecto;
 
-		$respuesta = ControladorPerfil::ctrMostrarPerfil($item, $valor);
+		$respuesta = ControladorProyecto::ctrMostrarProyecto($item, $valor);
 
 		echo json_encode($respuesta);
 
@@ -25,13 +25,13 @@ class AjaxPerfil{
 }
 
 /*=============================================
-EDITAR CONTACTO
+EDITAR PROYECTO
 =============================================*/
-if(isset($_POST["idPerfil"])){
+if(isset($_POST["idProyecto"])){
 
-	$editar = new AjaxPerfil();
-	$editar -> idPerfil = $_POST["idPerfil"];
-	$editar -> ajaxPerfil();
+	$editar = new AjaxProyecto();
+	$editar -> idProyecto = $_POST["idProyecto"];
+	$editar -> ajaxProyecto();
 
 }
 
