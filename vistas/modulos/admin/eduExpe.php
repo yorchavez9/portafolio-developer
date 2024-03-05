@@ -84,7 +84,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="tipo" class="form-label fw-bold">Selecione educación o experiencia (<span class="text-danger">*</span>)</label>
-                        <select name="tipo" class="form-control">
+                        <select name="tipo" class="form-control" required>
                             <option value="" selected disabled>Selecione una opción</option>
                             <option value="educacion">Educación</option>
                             <option value="experiencia">Experiencia</option>
@@ -93,19 +93,19 @@
                     </div>
                     <div class="form-group">
                         <label for="nombre" class="form-label fw-bold">Ingrese el título (<span class="text-danger">*</span>)</label>
-                        <input type="text" name="titulo" class="form-control" placeholder="Ingrese el título">
+                        <input type="text" name="titulo" class="form-control" placeholder="Ingrese el título" required>
                     </div>
                     <div class="form-group">
                         <label for="lugar" class="form-label fw-bold">Ingrese el lugar (<span class="text-danger">*</span>)</label>
-                        <input type="text" name="lugar" class="form-control" placeholder="Ingrese el lugar">
+                        <input type="text" name="lugar" class="form-control" placeholder="Ingrese el lugar" required>
                     </div>
                     <div class="form-group">
-                        <label for="correo" class="form-label fw-bold">Ingrese la descripción (<span class="text-danger">*</span>)</label>
+                        <label for="correo" class="form-label fw-bold">Ingrese la descripción</label>
                         <textarea name="descripcion" class="form-control" placeholder="Ingrese una descripción breve de 30 palabras"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="contrasena" class="form-label fw-bold">Ingrese la fecha (<span class="text-danger">*</span>)</label>
-                        <input type="date" name="fecha" class="form-control">
+                        <input type="text" name="fecha" class="form-control" placeholder="10/02/2023 hasta 14/01/2024">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -159,7 +159,7 @@
                     </div>
                     <div class="form-group">
                         <label for="contrasena" class="form-label fw-bold">Ingrese la fecha (<span class="text-danger">*</span>)</label>
-                        <input type="date" name="editFecha" id="editFecha" class="form-control">
+                        <input type="text" name="editFecha" id="editFecha" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer">

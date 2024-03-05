@@ -26,6 +26,7 @@ $(".tabla_edu_expe").on("click", ".btnEditarEduExpe", function(){
 			$("#id_exp_edu").val(respuesta["id_exp_edu"]);
 			$("#editTipo").val(respuesta["tipo"]);
 			$("#editTitulo").val(respuesta["titulo"]);
+			$("#editLugar").val(respuesta["lugar"]);
 			$("#editDescripcion").val(respuesta["descripcion"]);
 			$("#editFecha").val(respuesta["fecha"]);
 
