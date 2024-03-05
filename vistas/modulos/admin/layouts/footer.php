@@ -85,7 +85,7 @@
 	<script src="vistas/js/proyecto.js"></script>
 	<script src="vistas/js/script-proyecto.js"></script>
 	<script src="vistas/js/script-proyecto.js"></script>
-	<script src="vistas/js/eduExpe.js"></script>
+	<script src="vistas/js/contacto.mensaje.js"></script>
 
 </body>
 </html>

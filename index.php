@@ -9,6 +9,7 @@ require_once "controladores/Redes.contacto.controlador.php";
 require_once "controladores/Perfil.controlador.php";
 require_once "controladores/Proyecto.controlador.php";
 require_once "controladores/EduExpe.controlador.php";
+require_once "controladores/Contacto.controlador.php";
 
 
 /* MODELOS */
@@ -19,6 +20,7 @@ require_once "modelos/Redes.contacto.modelo.php";
 require_once "modelos/Perfil.modelo.php";
 require_once "modelos/Proyecto.modelo.php";
 require_once "modelos/EduExpe.modelo.php";
+require_once "modelos/Contacto.modelo.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

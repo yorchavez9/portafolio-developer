@@ -27,6 +27,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
                $_GET["ruta"] == "redesContacto" ||
                $_GET["ruta"] == "proyectos" ||
                $_GET["ruta"] == "eduExpe" ||
+               $_GET["ruta"] == "contactoMsg" ||
                $_GET["ruta"] == "salir"){
       
               include "modulos/admin/".$_GET["ruta"].".php";

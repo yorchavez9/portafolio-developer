@@ -44,6 +44,12 @@
                     <span class="nav-text">Educación experiencia</span>
                 </a>
             </li>
+            <li>
+                <a href="contactoMsg" aria-expanded="false">
+                    <i class="fas fa-comment"></i>
+                    <span class="nav-text">Mensaje contacto</span>
+                </a>
+            </li>
          
         </ul>
  

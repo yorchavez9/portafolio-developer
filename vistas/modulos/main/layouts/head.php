@@ -39,6 +39,11 @@
         }
     </script>
 
+    <!-- sweetalert2 -->
+	<link rel="stylesheet" href="vistas/dist/sweetalert2/sweetalert2.min.css">
+	<script src="vistas/dist/sweetalert2/sweetalert2.min.js"></script>
+	<script src="vistas/dist/jquery/jquery-3.7.1.min.js"></script>
+
 </head>
 
 <body class="bg-dark_primary_bg">

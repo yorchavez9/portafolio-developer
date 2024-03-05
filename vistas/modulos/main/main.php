@@ -832,23 +832,30 @@
                 <div class="col-lg-6">
                     <div class="contact__left">
                         <div class="section__heading mb-50">
-                            <span class="section__heading--subtitle text__secondary">CONTACT</span>
-                            <h2 class="section__heading--title mb-10">Get I contact work </h2>
-                            <p class="section__heading--desc">Promote your blog posts, case udie, and product ouncems
-                                with the the branded videoscustomers coming back for
-                                services Makes best effort.</p>
+                            <span class="section__heading--subtitle text__secondary">CONTACTO</span>
+                            <h2 class="section__heading--title mb-10">Contáctame y trabajemos juntos!</h2>
+                            <p class="section__heading--desc">¡Estoy listo/a para colaborar contigo! Completa el formulario o envíame un correo electrónico para ponernos en contacto.</p>
                         </div>
-                        <form class="contact__form" action="#">
+
+
+                        <form class="contact__form" method="POST">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                    <input class="contact__input--field" placeholder="Your name" type="text">
+                                    <input type="text" class="contact__input--field" name="nombre" placeholder="Tu nombre completo">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                    <input class="contact__input--field" placeholder="Your email" type="text">
+                                    <input type="email" class="contact__input--field" name="correo" placeholder="Tu correo electrónico">
                                 </div>
                             </div>
-                            <textarea class="contact__textarea--field" placeholder="Message"></textarea>
-                            <button class="contact__button primary__btn">Send Request</button>
+
+                            <textarea name="mensaje" class="contact__textarea--field" placeholder="Mensaje"></textarea>
+                            
+                            <button type="submit" class="contact__button primary__btn">Enviar</button>
+
+                            <?php
+                            $crearContactoMensaje = new ControladorContactoMsg();
+                            $crearContactoMensaje->ctrCrearContactoMsg();
+                            ?>
                         </form>
                     </div>
                 </div>
