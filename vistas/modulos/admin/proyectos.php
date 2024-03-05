@@ -97,7 +97,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cliente" class="form-label fw-bold">Ingrese el cliente (<span class="text-danger">*</span>)</label>
-                        <input type="text" name="cliente" class="form-control" placeholder="Ingrese apellidos" required>
+                        <input type="text" name="cliente" class="form-control" placeholder="Ingrese el nombre completo" required>
                     </div>
                     <div class="form-group">
                         <label for="lenguajes" class="form-label fw-bold">Ingrese los lenguajes de programación (<span class="text-danger">*</span>)</label>
@@ -105,7 +105,7 @@
                     </div>
                     <div class="form-group">
                         <label for="preview" class="form-label fw-bold">Ingrese el link del demo</label>
-                        <input type="text" name="preview" class="form-control" placeholder="Ingrese la contraseña">
+                        <input type="text" name="preview" class="form-control" placeholder="Ingrese el link o url del proyecto">
                     </div>
                     <div class="form-group">
                         <label for="preview" class="form-label fw-bold">Ingrese la descripción (<span class="text-danger">*</span>)</label>

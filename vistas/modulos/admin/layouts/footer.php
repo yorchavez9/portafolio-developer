@@ -23,6 +23,10 @@
 	<script src="vistas/dist/admin/js/dashboard/dashboard-1.js"></script>
 	
 	<script src="vistas/dist/admin/vendor/owl-carousel/owl.carousel.js"></script>
+
+	<!-- Chart ChartJS plugin files -->
+    <script src="vistas/dist/admin/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="vistas/dist/admin/js/plugins-init/chartjs-init.js"></script>
 	
     <script src="vistas/dist/admin/js/custom.min.js"></script>
 	<script src="vistas/dist/admin/js/dlabnav-init.js"></script>
