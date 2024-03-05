@@ -38,6 +38,12 @@
                     <span class="nav-text">Proyectos</span>
                 </a>
             </li>
+            <li>
+                <a href="eduExpe" aria-expanded="false">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="nav-text">Educación experiencia</span>
+                </a>
+            </li>
          
         </ul>
  
