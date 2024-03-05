@@ -15,10 +15,11 @@
         <div class="container">
             <div class="main__header d-flex justify-content-between align-items-center">
                 <div class="main__logo">
-                    <h1 class="main__logo--title"><a class="main__logo--link" href="index.html">
-                            <img class="main__logo--img logo_light" src="vistas/dist/assets/img/logo/nav-log.png" alt="logo-img">
-                            <img class="main__logo--img logo_dark" src="vistas/dist/assets/img/logo/nav-log-white.png" alt="logo-img">
-                        </a></h1>
+                    <h1 class="main__logo--title fw-bold" style="font-size: 30px">
+                        <a class="main__logo--link" href="index.php">
+                            APUURAY
+                        </a>
+                    </h1>
                 </div>
                 <div class="offcanvas__header--menu__open ">
                     <a class="offcanvas__header--menu__open--btn" href="javascript:void(0)" data-offcanvas>
@@ -81,7 +82,7 @@
     <div class="offcanvas__inner">
         <div class="offcanvas__logo">
             <a class="offcanvas__logo_link" href="index.html">
-                <img src="vistas/dist/assets/img/logo/nav-log.png" alt="Logo-img" width="158" height="36">
+                <img src="vistas/img/logo/logo.png" alt="Logo-img" width="158" height="36">
             </a>
             <button class="offcanvas__close--btn" data-offcanvas>close</button>
         </div>

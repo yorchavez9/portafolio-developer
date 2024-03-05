@@ -101,7 +101,7 @@
                     </div>
                     <div class="form-group">
                         <label for="lenguajes" class="form-label fw-bold">Ingrese los lenguajes de programación (<span class="text-danger">*</span>)</label>
-                        <input type="text" name="lenguajes" class="form-control" placeholder="Ingrese corro electrónico" required>
+                        <input type="text" name="lenguajes" class="form-control" placeholder="Ingrese los lenguajes de programación" required>
                     </div>
                     <div class="form-group">
                         <label for="preview" class="form-label fw-bold">Ingrese el link del demo</label>

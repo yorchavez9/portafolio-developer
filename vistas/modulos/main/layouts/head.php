@@ -4,13 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Jorge Chávez Huincho</title>
-    <meta name="description" content="Morden Bootstrap HTML5 Template">
+    <title>Apuuray</title>
+    <meta name="description" content="Portafolio developer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="vistas/dist/main/assets/img/favicon.ico">
+
+    <link rel="shortcut icon" type="image/x-icon" href="vistas/img/logo/logo.png">
 
     <!-- ======= All CSS Plugins here ======== -->
     <link rel="stylesheet" href="vistas/dist/main/assets/css/plugins/swiper-bundle.min.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;display=swap" rel="stylesheet">
 
     <!-- Plugin css -->
