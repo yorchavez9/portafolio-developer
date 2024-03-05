@@ -92,28 +92,29 @@
             <form method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="titulo" class="form-label fw-bold">Ingrese el título</label>
-                        <input type="text" name="titulo" class="form-control" placeholder="Ingrese nombre">
+                        <label for="titulo" class="form-label fw-bold">Ingrese el título del proyecto (<span class="text-danger">*</span>)</label>
+                        <input type="text" name="titulo" class="form-control" placeholder="Ingrese el título del proyecto" required>
                     </div>
                     <div class="form-group">
-                        <label for="cliente" class="form-label fw-bold">Ingrese el cliente</label>
-                        <input type="text" name="cliente" class="form-control" placeholder="Ingrese apellidos">
+                        <label for="cliente" class="form-label fw-bold">Ingrese el cliente (<span class="text-danger">*</span>)</label>
+                        <input type="text" name="cliente" class="form-control" placeholder="Ingrese apellidos" required>
                     </div>
                     <div class="form-group">
-                        <label for="lenguajes" class="form-label fw-bold">Ingrese los lenguajes de programación</label>
-                        <input type="text" name="lenguajes" class="form-control" placeholder="Ingrese corro electrónico">
+                        <label for="lenguajes" class="form-label fw-bold">Ingrese los lenguajes de programación (<span class="text-danger">*</span>)</label>
+                        <input type="text" name="lenguajes" class="form-control" placeholder="Ingrese corro electrónico" required>
                     </div>
                     <div class="form-group">
                         <label for="preview" class="form-label fw-bold">Ingrese el link del demo</label>
                         <input type="text" name="preview" class="form-control" placeholder="Ingrese la contraseña">
                     </div>
                     <div class="form-group">
-                        <label for="preview" class="form-label fw-bold">Ingrese la descripción</label>
+                        <label for="preview" class="form-label fw-bold">Ingrese la descripción (<span class="text-danger">*</span>)</label>
                         <textarea name="descripcion" id="descripcion" class="form-control" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="imagen" class="form-label fw-bold">Ingrese la imagen</label>
-                        <input type="file" name="imagen" id="imagen" class="form-control">
+                        <input type="file" name="imagen" id="nuevoImagen" class="form-control">
+                        <img src="" id="nuevoImagenPreview" class="img-fluid mt-2 mb-2" alt="">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -129,49 +130,59 @@
     </div>
 </div>
 
-
 <!-- MODAL EDITAR PROYECTO -->
 <div class="modal fade" id="modalEditarProyecto">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title fw-bold">Editar usuario</h3>
+                <h3 class="modal-title fw-bold">Editar proyecto</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal">
                 </button>
             </div>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <input type="hidden" name="id_usuario" id="id_usuario">
+                    <input type="hidden" name="id_proyecto" id="id_proyecto">
                     <div class="form-group">
-                        <label for="nombre" class="form-label fw-bold">Nombre</label>
-                        <input type="text" name="editarNombre" id="editarNombre" class="form-control">
+                        <label for="titulo" class="form-label fw-bold">Título del proyecto (<span class="text-danger">*</span>)</label>
+                        <input type="text" name="editTitulo" id="editTitulo" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="apellidos" class="form-label fw-bold">Apellidos</label>
-                        <input type="text" name="editarApellidos" id="editarApellidos" class="form-control">
+                        <label for="cliente" class="form-label fw-bold">Nombre del cliente (<span class="text-danger">*</span>)</label>
+                        <input type="text" name="editCliente" id="editCliente" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="correo" class="form-label fw-bold">Correo electrónico</label>
-                        <input type="email" name="editarCorreo" id="editarCorreo" class="form-control">
+                        <label for="lenguajes" class="form-label fw-bold">Lenguajes de programación (<span class="text-danger">*</span>)</label>
+                        <input type="text" name="editLenguajes" id="editLenguajes" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="contrasena" class="form-label fw-bold">Ingrese la contraseña</label>
-                        <input type="password" class="form-control" name="editarContrasena" placeholder="Escriba la nueva contraseña">
-                        <input type="hidden" id="contrasenaActual" name="contrasenaActual">
+                        <label for="preview" class="form-label fw-bold">Link del demo</label>
+                        <input type="text" name="editPreview" id="editPreview" class="form-control" placeholder="Ingrese la url del demo">
+                    </div>
+                    <div class="form-group">
+                        <label for="preview" class="form-label fw-bold">Descripción (<span class="text-danger">*</span>)</label>
+                        <textarea name="editDescripcion" id="editDescripcion" class="form-control" cols="30" rows="10" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen" class="form-label fw-bold">Ingrese la imagen</label>
+                        <input type="file" name="editImagen" id="editImagen" class="form-control">
+                        <input type="hidden" name="imagenActual" id="imagenActual">
+                        <img src="" id="editImagenPreview" class="img-fluid mt-2 mb-2" alt="">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-sync"></i> Actualizar</button>
+                    <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
                 </div>
                 <?php
-                $editarUsuario = new ControladorProyecto();
-                $editarUsuario->ctrEditarProyecto();
+                $editarProyecto = new ControladorProyecto();
+                $editarProyecto->ctrEditarProyecto();
                 ?>
             </form>
         </div>
     </div>
 </div>
+
+
 
 <!-- BORRAR USUARIO -->
 

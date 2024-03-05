@@ -126,26 +126,26 @@ class ControladorProyecto
     static public function ctrEditarProyecto()
     {
 
-        if (isset($_POST["editNombre"])) {
+        if (isset($_POST["id_proyecto"])) {
 
-            if (preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s,.\']+$/u', $_POST["editNombre"])) {
+            if (preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s,.\']+$/u', $_POST["id_proyecto"])) {
 
 
                 /* ============================
                     VALIDANDO IMAGEN
                 ============================ */
 
-                $ruta = "vistas/img/foto/";
+                $ruta = "vistas/img/imagen/";
 
                 $ruta_img = $_POST["imagenActual"];
 
-                if (isset($_FILES["editFoto"]["tmp_name"]) && !empty($_FILES["editFoto"]["tmp_name"])) {
+                if (isset($_FILES["editImagen"]["tmp_name"]) && !empty($_FILES["editImagen"]["tmp_name"])) {
 
                     if (file_exists($ruta_img)) {
                         unlink($ruta_img);
                     }
 
-                    $extension = pathinfo($_FILES["editFoto"]["name"], PATHINFO_EXTENSION);
+                    $extension = pathinfo($_FILES["editImagen"]["name"], PATHINFO_EXTENSION);
 
                     $tipos_permitidos = array("jpg", "jpeg", "png");
 
@@ -155,7 +155,7 @@ class ControladorProyecto
 
                         $ruta_img = $ruta . $nombre_imagen . "." . $extension;
 
-                        if (move_uploaded_file($_FILES["editFoto"]["tmp_name"], $ruta_img)) {
+                        if (move_uploaded_file($_FILES["editImagen"]["tmp_name"], $ruta_img)) {
 
                             echo "path_imagen subida correctamente.";
                         } else {
@@ -169,55 +169,18 @@ class ControladorProyecto
                 }
 
 
-                /* ============================
-                    VALIDANDO ARCHIVO
-                ============================ */
-
-                $ruta = "vistas/archivo/";
-
-                $ruta_archivo = $_POST["cvActual"];
-
-                if (isset($_FILES["editCv"]["tmp_name"]) && !empty($_FILES["editCv"]["tmp_name"])) {
-
-                    if (file_exists($ruta_archivo)) {
-                        unlink($ruta_archivo);
-                    }
-
-                    $extension = pathinfo($_FILES["editCv"]["name"], PATHINFO_EXTENSION);
-
-                    $tipos_permitidos = array("pdf", "doc", "docx");
-
-                    if (in_array(strtolower($extension), $tipos_permitidos)) {
-
-                        $nombre_imagen = date("YmdHis") . rand(1000, 9999);
-
-                        $ruta_archivo = $ruta . $nombre_imagen . "." . $extension;
-
-                        if (move_uploaded_file($_FILES["editCv"]["tmp_name"], $ruta_archivo)) {
-
-                            echo "Archivo subida correctamente.";
-                        } else {
-
-                            echo "Error al subir la imagen.";
-                        }
-                    } else {
-
-                        echo "Solo se permiten archivos de imagen JPG, JPEG, PNG.";
-                    }
-                }
-
-
-                $tabla = "perfil";
+                $tabla = "proyectos";
 
 
 
                 $datos = array(
                     "id_perfil" => $_POST["id_perfil"],
-                    "imagen" => $ruta_img,
-                    "cv" => $ruta_archivo,
-                    "nombre" => $_POST["editNombre"],
-                    "especializacion" => $_POST["editEspecializacion"],
-                    "descripcion" => $_POST["editDescripcion"]
+                    "titulo" => $_POST["editTitulo"],
+                    "cliente" => $_POST["editCliente"],
+                    "lenguajes" => $_POST["editLenguajes"],
+                    "preview" => $_POST["editPreview"],
+                    "descripcion" => $_POST["editDescripcion"],
+                    "imagen" => $ruta_img
                 );
 
                 $respuesta = ModeloProyecto::mdlEditarProyecto($tabla, $datos);
@@ -234,7 +197,7 @@ class ControladorProyecto
                               }).then(function(result) {
                                         if (result.value) {
     
-                                        window.location = "perfil";
+                                        window.location = "proyectos";
     
                                         }
                                     })

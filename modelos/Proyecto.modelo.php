@@ -73,14 +73,14 @@ class ModeloProyecto{
 
 	static public function mdlEditarProyecto($tabla, $datos){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET titulo = :titulo, cliente = :cliente, lenguajes = :lenguajes, preview = :preview, descripcion,imagen = :descripcion,imagen WHERE id_perfil = :id_perfil");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET titulo = :titulo, cliente = :cliente, lenguajes = :lenguajes, preview = :preview, descripcion = :descripcion, imagen = :imagen WHERE id_proyecto = :id_proyecto");
 
 		$stmt -> bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
 		$stmt -> bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
 		$stmt -> bindParam(":lenguajes", $datos["lenguajes"], PDO::PARAM_STR);
 		$stmt -> bindParam(":preview", $datos["preview"], PDO::PARAM_STR);
-		$stmt -> bindParam(":descripcion,imagen", $datos["descripcion,imagen"], PDO::PARAM_STR);
-		$stmt -> bindParam(":id_perfil", $datos["id_perfil"], PDO::PARAM_INT);
+		$stmt -> bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_INT);
 
 
 		if($stmt -> execute()){
@@ -106,9 +106,9 @@ class ModeloProyecto{
 
 	static public function mdlBorrarProyecto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_perfil = :id_perfil");
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_proyecto = :id_proyecto");
 
-		$stmt -> bindParam(":id_perfil", $datos, PDO::PARAM_INT);
+		$stmt -> bindParam(":id_proyecto", $datos, PDO::PARAM_INT);
 
 		if($stmt -> execute()){
 

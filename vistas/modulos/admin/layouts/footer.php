@@ -82,6 +82,7 @@
 	<script src="vistas/js/redes.sociales.js"></script>
 	<script src="vistas/js/redes.contacto.js"></script>
 	<script src="vistas/js/perfil.js"></script>
+	<script src="vistas/js/proyecto.js"></script>
 
 </body>
 </html>

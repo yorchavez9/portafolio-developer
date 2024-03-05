@@ -1,19 +1,117 @@
+/*=============================================
+SUBIENDO LA IMAGEN DEL PROYECTO
+=============================================*/
+$("#nuevoImagen").change(function(){
+
+	var imagen = this.files[0];
+	
+	/*=============================================
+  	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
+  	=============================================*/
+
+  	if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png" && imagen["type"] != "image/jpg"){
+
+  		$("#nuevoImagen").val("");
+
+  		 Swal.fire({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen debe estar en formato JPG, PNG o JPEG!",
+		      icon: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else if(imagen["size"] > 2000000){
+
+  		$("#nuevoImagen").val("");
+
+  		 Swal.fire({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen no debe pesar más de 2MB!",
+		      icon: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else{
+
+  		var datosImagen = new FileReader;
+  		datosImagen.readAsDataURL(imagen);
+
+  		$(datosImagen).on("load", function(event){
+
+  			var rutaImagen = event.target.result;
+
+  			$("#nuevoImagenPreview").attr("src", rutaImagen);
+
+  		})
+
+  	}
+})
+
+
+/* SUBIENDO IMAGEN EDITANDO */
+
+$("#editImagen").change(function(){
+
+	var imagen = this.files[0];
+	
+	/*=============================================
+  	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
+  	=============================================*/
+
+  	if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png" && imagen["type"] != "image/jpg"){
+
+  		$("#editImagen").val("");
+
+  		 Swal.fire({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen debe estar en formato JPG, PNG o JPEG!",
+		      icon: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else if(imagen["size"] > 2000000){
+
+  		$("#editImagen").val("");
+
+  		 Swal.fire({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen no debe pesar más de 2MB!",
+		      icon: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else{
+
+  		var datosImagen = new FileReader;
+  		datosImagen.readAsDataURL(imagen);
+
+  		$(datosImagen).on("load", function(event){
+
+  			var rutaImagen = event.target.result;
+
+  			$("#editImagenPreview").attr("src", rutaImagen);
+
+  		})
+
+  	}
+})
+
 
 
 /*=============================================
 EDITAR PROYECTO
 =============================================*/
-$(".content_perfil").on("click", ".btnEditarPerfil", function(){
+$(".tabla_proyecto").on("click", ".btnEditarProyecto", function(){
 
-	var idPerfil = $(this).attr("idPerfil");
+	var idProyecto = $(this).attr("idProyecto");
 
 	
 	var datos = new FormData();
-	datos.append("idPerfil", idPerfil);
+	datos.append("idProyecto", idProyecto);
 
 	$.ajax({
 
-		url:"ajax/perfil.ajax.php",
+		url:"ajax/proyecto.ajax.php",
 		method: "POST",
 		data: datos,
 		cache: false,
@@ -22,12 +120,17 @@ $(".content_perfil").on("click", ".btnEditarPerfil", function(){
 		dataType: "json",
 		success: function(respuesta){
 			
-			$("#id_perfil").val(respuesta["id_perfil"]);
-			$("#editNombre").val(respuesta["nombre"]);
-			$("#editEspecializacion").val(respuesta["especializacion"]);
-			$("#fotoActual").val(respuesta["foto"]);
-			$("#cvActual").val(respuesta["cv"]);
+			$("#id_proyecto").val(respuesta["id_proyecto"]);
+			$("#editTitulo").val(respuesta["titulo"]);
+			$("#editCliente").val(respuesta["cliente"]);
+			$("#editLenguajes").val(respuesta["lenguajes"]);
+			$("#editPreview").val(respuesta["preview"]);
 			$("#editDescripcion").val(respuesta["descripcion"]);
+			$("#imagenActual").val(respuesta["imagen"]);
+
+      if(respuesta["imagen"] != null){
+        $("#editImagenPreview").attr("src", respuesta["imagen"]);
+      }
 		
 		}
 
@@ -39,9 +142,9 @@ $(".content_perfil").on("click", ".btnEditarPerfil", function(){
 /*=============================================
 ELIMINAR PROYECTO
 =============================================*/
-$(".content_perfil").on("click", ".btnEliminarPerfil", function () {
+$(".tabla_proyecto").on("click", ".btnEliminarPerfil", function () {
 
-    var idPerfil = $(this).attr("idPerfil");
+    var idProyecto = $(this).attr("idProyecto");
     var foto = $(this).attr("foto");
     var cv = $(this).attr("cv");
 
@@ -58,8 +161,8 @@ $(".content_perfil").on("click", ".btnEliminarPerfil", function () {
     }).then(function (result) {
       if (result.value) {
         window.location =
-          "index.php?ruta=perfil&idPerfil=" +
-          idPerfil +
+          "index.php?ruta=perfil&idProyecto=" +
+          idProyecto +
           "&foto=" +
           foto +
           "&cv=" +
