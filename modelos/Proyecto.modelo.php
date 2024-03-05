@@ -73,13 +73,21 @@ class ModeloProyecto{
 
 	static public function mdlEditarProyecto($tabla, $datos){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET titulo = :titulo, cliente = :cliente, lenguajes = :lenguajes, preview = :preview, descripcion = :descripcion, imagen = :imagen WHERE id_proyecto = :id_proyecto");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET 
+																titulo = :titulo, 
+																cliente = :cliente, 
+																lenguajes = :lenguajes, 
+																preview = :preview, 
+																descripcion = :descripcion, 
+																imagen = :imagen 
+																WHERE id_proyecto = :id_proyecto");
 
 		$stmt -> bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
 		$stmt -> bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
 		$stmt -> bindParam(":lenguajes", $datos["lenguajes"], PDO::PARAM_STR);
 		$stmt -> bindParam(":preview", $datos["preview"], PDO::PARAM_STR);
 		$stmt -> bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+		$stmt -> bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_INT);
 
 

@@ -128,7 +128,7 @@ class ControladorProyecto
 
         if (isset($_POST["id_proyecto"])) {
 
-            if (preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s,.\']+$/u', $_POST["id_proyecto"])) {
+            if (preg_match('/^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜ\s,.\']+$/u', $_POST["id_proyecto"])) {
 
 
                 /* ============================
@@ -174,7 +174,7 @@ class ControladorProyecto
 
 
                 $datos = array(
-                    "id_perfil" => $_POST["id_perfil"],
+                    "id_proyecto" => $_POST["id_proyecto"],
                     "titulo" => $_POST["editTitulo"],
                     "cliente" => $_POST["editCliente"],
                     "lenguajes" => $_POST["editLenguajes"],
@@ -215,22 +215,18 @@ class ControladorProyecto
     static public function ctrBorrarProyecto()
     {
 
-        if (isset($_GET["idPerfil"])) {
+        if (isset($_GET["idProyecto"])) {
 
-            $tabla = "perfil";
+            $tabla = "proyectos";
 
-            $datos = $_GET["idPerfil"];
+            $datos = $_GET["idProyecto"];
 
             if ($_GET["imagen"] != "") {
 
                 unlink($_GET["imagen"]);
                 rmdir($_GET["imagen"]);
             }
-            if ($_GET["cv"] != "") {
-
-                unlink($_GET["cv"]);
-                rmdir($_GET["cv"]);
-            }
+            
 
             $respuesta = ModeloProyecto::mdlBorrarProyecto($tabla, $datos);
 
@@ -247,7 +243,7 @@ class ControladorProyecto
 					  }).then(function(result) {
 								if (result.value) {
 
-								window.location = "perfil";
+								window.location = "proyectos";
 
 								}
 							})

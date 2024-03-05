@@ -142,31 +142,29 @@ $(".tabla_proyecto").on("click", ".btnEditarProyecto", function(){
 /*=============================================
 ELIMINAR PROYECTO
 =============================================*/
-$(".tabla_proyecto").on("click", ".btnEliminarPerfil", function () {
+$(".tabla_proyecto").on("click", ".btnEliminarProyecto", function () {
 
+	
     var idProyecto = $(this).attr("idProyecto");
-    var foto = $(this).attr("foto");
-    var cv = $(this).attr("cv");
+    var imagen = $(this).attr("imagen");
 
 
     Swal.fire({
-      title: "¿Está seguro de borrar el perfil?",
+      title: "¿Está seguro de borrar el proyecto?",
       text: "¡Si no lo está puede cancelar la accíón!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       cancelButtonText: "Cancelar",
-      confirmButtonText: "Si, borrar perfil!",
+      confirmButtonText: "Si, borrar proyecto!",
     }).then(function (result) {
       if (result.value) {
         window.location =
-          "index.php?ruta=perfil&idProyecto=" +
+          "index.php?ruta=proyectos&idProyecto=" +
           idProyecto +
-          "&foto=" +
-          foto +
-          "&cv=" +
-          cv;
+          "&imagen=" +
+          imagen;
       }
     });
   });
