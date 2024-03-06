@@ -17,12 +17,12 @@ Descripción breve del proyecto.
 ## Estructura del Proyecto 📁
 
 - `index.php`: Archivo principal del proyecto.
-- `controllers/`: Carpeta que contiene controladores.
-- `models/`: Carpeta que contiene modelos.
-- `views/`: Carpeta que contiene vistas.
-- `public/`: Carpeta pública accesible a través del navegador.
+- `controladores/`: Carpeta que contiene controladores.
+- `modelos/`: Carpeta que contiene modelos.
+- `vistas/`: Carpeta que contiene vistas.
     - `css/`: Carpeta que contiene archivos CSS.
     - `js/`: Carpeta que contiene archivos JavaScript.
+    - `Módulos/`: Carpeta que contiene los módulos de admin y main.
 - `vendor/`: Carpeta que contiene bibliotecas de terceros (por ejemplo, Composer).
 - Otros directorios y archivos según sea necesario...
 
@@ -43,7 +43,7 @@ class Conexion {
         }
     }
 }
-
+```
 ## Uso 🚦
 
 Describe cómo utilizar tu proyecto, incluyendo ejemplos de código si es necesario.
