@@ -1,18 +1,15 @@
-# Nombre del Proyecto 🚀
+# PORTAFOLIO DEVELOPER 🚀
 
-Descripción breve del proyecto.
+Portafolio personal creado con PHP y MySQL para mostrar habilidades, proyectos y experiencia laboral de manera profesional.
 
 ## Requisitos Previos 📋
 
-- PHP (versión X.X.X)
-- MySQL (versión X.X.X)
-- Otros requisitos, si los hay...
+- PHP (versión 8.2.12)
+- MySQL (versión 8.0.0)
 
 ## Instalación 💻
 
-1. Clona el repositorio: `git clone https://github.com/tu_usuario/tu_proyecto.git`
-2. Copia el archivo de configuración `config.example.php` y renómbralo a `config.php`.
-3. Actualiza la configuración en el archivo `config.php` con los detalles de tu base de datos.
+1. Clona el repositorio: `git clone https://github.com/yorchavez9/portafolio-developer.git`
 
 ## Estructura del Proyecto 📁
 
@@ -44,9 +41,6 @@ class Conexion {
     }
 }
 ```
-## Uso 🚦
-
-Describe cómo utilizar tu proyecto, incluyendo ejemplos de código si es necesario.
 
 ## Contribución 🤝
 
@@ -58,9 +52,7 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 4. Haz push a la rama (`git push origin feature/nueva-caracteristica`).
 5. Haz un pull request en el repositorio original.
 
-## Créditos 🌟
 
-Agradece a quienes han contribuido al proyecto.
 
 ## Licencia 📄
 
