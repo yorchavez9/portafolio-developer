@@ -1,3 +1,13 @@
+<?php
+
+$item = null;
+$valor = null;
+
+
+$perfil = ControladorPerfil::ctrMostrarPerfil($item, $valor);
+
+?>
+
 <button class="light__dark--btn style__fixed" id="light__to--dark">
     <svg class="dark--mode__icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
         <title>Oscuro</title>
@@ -44,7 +54,7 @@
                                     <a class="header__menu--link" href="#servives">Servicios </a>
                                 </li>
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="#portfolio">Portafolio </a>
+                                    <a class="header__menu--link" href="#portfolio">Proyectos </a>
                                 </li>
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="#blog">Blog
@@ -56,18 +66,25 @@
                             </ul>
                         </nav>
                     </div>
-                    <button class="primary__btn download__btn">
+                    <?php
+                    foreach ($perfil as $key => $value) {
+                    ?>
+                    <a href="<?php echo $value["cv"]?>" class="primary__btn download__btn" download>
                         <svg class="download__btn--svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
                         Descargar CV
-                    </button>
+                    </a>
+                    <?php
+                    }
+                    ?>
                     <a href="#" class="primary__btn download__btn" data-bs-toggle="modal" data-bs-target="#portfolioModal">
                         <i class="fas fa-lock mx-2"></i>
                         Login
                     </a>
+
                 </div>
             </div>
         </div>
@@ -82,7 +99,7 @@
     <div class="offcanvas__inner">
         <div class="offcanvas__logo">
             <a class="offcanvas__logo_link" href="index.html">
-                <img src="vistas/img/logo/logo.png" alt="Logo-img" width="158" height="36">
+                <img src="vistas/img/logo/logo.png" alt="Logo-img" width="50" height="10">
             </a>
             <button class="offcanvas__close--btn" data-offcanvas>close</button>
         </div>
@@ -108,14 +125,20 @@
                 <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="#contact">Login</a></li>
             </ul>
             <div class="offcanvas__download--btn">
-                <button class="primary__btn download__btn">
+                <?php
+                foreach ($perfil as $key => $value) {
+                ?>
+                <a href="<?php echo $value["cv"]?>" class="primary__btn download__btn" download>
                     <svg class="download__btn--svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
                     Descargar CV
-                </button>
+                </a>
+                <?php
+                }
+                ?>
             </div>
 
             <div class="offcanvas__download--btn">
