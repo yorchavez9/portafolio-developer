@@ -50,16 +50,16 @@ $perfil = ControladorPerfil::ctrMostrarPerfil($item, $valor);
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="#about">Acerca de </a>
                                 </li>
-                                <li class="header__menu--items">
+                                <!-- <li class="header__menu--items">
                                     <a class="header__menu--link" href="#servives">Servicios </a>
-                                </li>
+                                </li> -->
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="#portfolio">Proyectos </a>
                                 </li>
-                                <li class="header__menu--items">
+                               <!--  <li class="header__menu--items">
                                     <a class="header__menu--link" href="#blog">Blog
                                     </a>
-                                </li>
+                                </li> -->
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="#contact">Contacto </a>
                                 </li>
@@ -111,15 +111,9 @@ $perfil = ControladorPerfil::ctrMostrarPerfil($item, $valor);
                 <li class="offcanvas__menu_li">
                     <a class="offcanvas__menu_item" href="#about">Acerca de</a>
                 </li>
-                <li class="offcanvas__menu_li">
+             <!--    <li class="offcanvas__menu_li">
                     <a class="offcanvas__menu_item" href="#servives">Servicios</a>
-                </li>
-                <li class="offcanvas__menu_li">
-                    <a class="offcanvas__menu_item" href="#portfolio">Portafolio</a>
-                </li>
-                <li class="offcanvas__menu_li">
-                    <a class="offcanvas__menu_item" href="#blog">Blog</a>
-                </li>
+                </li> -->
                 <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="#contact">Contacto</a></li>
 
                 <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="#contact">Login</a></li>

@@ -132,7 +132,7 @@ $totalProyecto = count($proyectos);
     <!-- End Hero section -->
 
     <!-- Start sevices section -->
-    <section class="services__section section--padding" id="servives">
+    <!--   <section class="services__section section--padding" id="servives">
         <div class="container">
             <div class="section__heading--topbar d-flex align-items-center justify-content-between mb-50">
                 <div class="section__heading max-width-580">
@@ -248,7 +248,7 @@ $totalProyecto = count($proyectos);
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End sevices section -->
 
     <!-- Start about section -->
@@ -275,7 +275,7 @@ $totalProyecto = count($proyectos);
                             <li class="about__info--items">Idiomas:Español, Francés, Inglés</li>
 
                         </ul>
-                        <a class="about__btn primary__btn" href="#">Contratame</a>
+                        <a class="about__btn primary__btn" href="#contact">Contratarme</a>
                     </div>
                 </div>
                 <div class="about__thumbnail">
@@ -357,7 +357,7 @@ $totalProyecto = count($proyectos);
             <div class="resume__section--inner d-flex">
 
                 <!-- EXPERIENCIA -->
-                <div class="resume__step">
+                <div class="resume__step col-md-6">
                     <div class="border__position--style"> </div>
                     <?php
                     foreach ($educacionExperiencia as $key => $value) {
@@ -374,7 +374,7 @@ $totalProyecto = count($proyectos);
                                     <div class="resume__content">
                                         <div class="resume__content--top d-flex align-items-center mb-10">
                                             <h3 class="resume__content--title"><?php echo $value["titulo"] ?></h3>
-                                            <span class="resume__content--subtitle"><?php echo $value["lugar"] ?></span>
+                                            <span class="resume__content--subtitle text-center"><?php echo $value["lugar"] ?></span>
                                         </div>
                                         <p class="resume__content--desc mb-20"><?php echo $value["descripcion"] ?></p>
                                         <span class="resume__date"><?php echo $value["fecha"] ?></span>
@@ -388,7 +388,7 @@ $totalProyecto = count($proyectos);
                 </div>
 
                 <!-- EDUCACIÓN -->
-                <div class="resume__step">
+                <div class="resume__step col-md-6">
                     <div class="border__position--style"> </div>
                     <?php
                     foreach ($educacionExperiencia as $key => $value) {
@@ -405,7 +405,7 @@ $totalProyecto = count($proyectos);
                                     <div class="resume__content">
                                         <div class="resume__content--top d-flex align-items-center mb-10">
                                             <h3 class="resume__content--title"><?php echo $value["titulo"] ?></h3>
-                                            <span class="resume__content--subtitle"><?php echo $value["lugar"] ?></span>
+                                            <span class="resume__content--subtitle text-center"><?php echo $value["lugar"] ?></span>
                                         </div>
                                         <p class="resume__content--desc mb-20"><?php echo $value["descripcion"] ?></p>
                                         <span class="resume__date"><?php echo $value["fecha"] ?></span>
@@ -612,7 +612,10 @@ $totalProyecto = count($proyectos);
                             </div>
                             <div class="contact__info--items d-flex align-items-center">
                                 <span class="contact__info--icon">
-                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12c0 2.2.6 4.3 1.7 6.1L0 24l6.3-1.7c1.8 1 3.9 1.7 6.1 1.7 6.6 0 12-5.4 12-12S18.6 0 12 0zm5.4 15.3c-.3.9-1 1.7-1.9 2.1-.6.3-3.6 1.4-4.1 1.5-.5.2-1 .2-1.4 0-.5-.3-2-1.1-2.8-1.4-.7-.4-1.5-.2-2.1.3-.3.3-.3.5-.3.6 0 1.3-.1 2-.1.7 0 2.4.2 3.5 1.3.9.9 1.2 1.8 1.4 2.2.1.3-.1.6-.4.9z" />
+                                    </svg>
+
                                 </span>
                                 <div class="contact__info--content">
                                     <h3 class="contact__info--title">Whatsapp</h3>
@@ -621,14 +624,16 @@ $totalProyecto = count($proyectos);
                             </div>
                             <div class="contact__info--items d-flex align-items-center">
                                 <span class="contact__info--icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.1 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.5 3-.5s2 .2 3 .5c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.3 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.3.7.9.6C20.6 21.8 24 17.3 24 12c0-6.6-5.4-12-12-12z" />
                                     </svg>
+
                                 </span>
                                 <div class="contact__info--content">
                                     <h3 class="contact__info--title">Github</h3>
-                                    <a href="<?php echo $value["github"]?>" target="_blank"><p class="contact__info--desc">Ver github</p></a>
+                                    <a href="<?php echo $value["github"] ?>" target="_blank">
+                                        <p class="contact__info--desc">Ver github</p>
+                                    </a>
                                 </div>
                             </div>
                             <div class="contact__info--items d-flex align-items-center">
@@ -640,7 +645,7 @@ $totalProyecto = count($proyectos);
                                 </span>
                                 <div class="contact__info--content">
                                     <h3 class="contact__info--title">Dirección</h3>
-                                    <p class="contact__info--desc"><?php echo $value["direccion"]?></p>
+                                    <p class="contact__info--desc"><?php echo $value["direccion"] ?></p>
                                 </div>
                             </div>
                         <?php

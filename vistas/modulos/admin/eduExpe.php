@@ -127,7 +127,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title fw-bold">Nueva educación o experiencia</h3>
+                <h3 class="modal-title fw-bold">Editar educación o experiencia</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal">
                 </button>
             </div>
