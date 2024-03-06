@@ -41,6 +41,23 @@ class Conexion {
     }
 }
 ```
+## Demo
+
+Demo: https://apuuraysis.com/
+
+Correo: admin@gmail.com
+Contraseña: Admin123
+
+## Vistas 
+
+![Ejemplo de imagen](preview/img01.png)
+![Ejemplo de imagen](preview/img02.png)
+![Ejemplo de imagen](preview/img03.png)
+![Ejemplo de imagen](preview/img04.png)
+![Ejemplo de imagen](preview/img05.png)
+![Ejemplo de imagen](preview/img06.png)
+![Ejemplo de imagen](preview/img07.png)
+
 
 ## Contribución 🤝
 
